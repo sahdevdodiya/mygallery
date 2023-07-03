@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+.container{
+    height: 100%;
+    /* content 1200px thi vade to nai motu thy*/
+    max-width: 1200px;
+
+    /* make all content in center*/
+    margin: 0 auto;
+
+    /* border and content in vache gap*/
+    padding: 20px;
+}
+.h1{
+    /* top buttom right left margin*/
+    margin: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+/* flex use and align*/
+.gallery{
+    display: flex;
+
+    /* jo warap no kare to all element in single row */
+    flex-wrap: wrap;
+
+    justify-content: center;
+    justify-content: space-between;
+}
+.fig{
+    /* 32*4 = 96 and 4 is space*/
+    width: 32%;
+    /* same nai size ni thy e mate fig nu kar vanu img*/
+
+    position: relative;
+    
+    
+    margin-bottom: 20px;
+
+    /* img ni border ne round kar va*/
+    border-radius: 10px;
+    
+    /**/
+    overflow: hidden;
+
+
+}
+.fig img{
+
+    /* Most IMP For fig width = my image width and hight*/
+    width: 100%;
+    height: 100%;
+
+    /* image starting ma black and withe hoy so make this with filter*/
+    filter: grayscale(100%);
+
+    /*have shadow  */
+    box-shadow: 0 0 20px #333;
+
+    object-fit: cover;
+}
+
+
+/* Only Hover Thing's Are Remainning*/
+.fig:hover{
+    /* transfor hover in 1.03 times*/
+    transform: scale(1.03);
+
+    /*tya arrow lai jata 2s ma hover thy*/
+    transition: 0.5s;
+
+    /* shdow make*/
+    /*filter:drop-shadow(0 0 15px #333);*/
+    
+    /*can we use box shadow make effect with modify*/
+    box-shadow: 0 0 10px #333;
+
+}
+
+/* back the color of img */
+.fig:hover img{
+    filter: grayscale(0%);
+}
+
+/* fig caption */
+/* this will provide by desiner*/
+.fig figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 5%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+
+    /* translacity atle visiblity 0 so nai dekhy jyare normal hase tyare */
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,255));
+    transition: 0.5s;
+
+}
+.fig.fig:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+
+}
